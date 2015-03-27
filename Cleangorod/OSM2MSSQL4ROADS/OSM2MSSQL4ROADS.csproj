@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2438D250-76D4-466A-B101-42C7BEF6A36F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>OsmMsSqlUpload</RootNamespace>
+    <AssemblyName>OSM2MSSQL4ROADS</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Debug\OSM2MSSQL4ROADS.exe.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Release\OSM2MSSQL4ROADS.exe.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="protobuf-net">
+      <HintPath>Lib64\protobuf-net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite">
+      <HintPath>Lib64\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Analyser\IAnalyserProgress.cs" />
+    <Compile Include="Analyser\ITempDatabase.cs" />
+    <Compile Include="Analyser\OsmUploadAnalyser.cs" />
+    <Compile Include="Analyser\SqliteTemp.cs" />
+    <Compile Include="Analyser\SqlServerTemp.cs" />
+    <Compile Include="Bzip2\BZip2.cs" />
+    <Compile Include="Bzip2\BZip2Constants.cs" />
+    <Compile Include="Bzip2\BZip2Exception.cs" />
+    <Compile Include="Bzip2\BZip2InputStream.cs" />
+    <Compile Include="Bzip2\BZip2OutputStream.cs" />
+    <Compile Include="Bzip2\IChecksum.cs" />
+    <Compile Include="Bzip2\StrangeCRC.cs" />
+    <Compile Include="Bzip2\StreamUtils.cs" />
+    <Compile Include="Loader.cs" />
+    <Compile Include="OSM2MSSQL4ROADS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OSM2MSSQL4ROADS.Designer.cs">
+      <DependentUpon>OSM2MSSQL4ROADS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProcessDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProcessDlg.Designer.cs">
+      <DependentUpon>ProcessDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Source\OSMReader.cs" />
+    <Compile Include="Source\PbfBuffers\Blob.cs" />
+    <Compile Include="Source\PbfBuffers\BlobHeader.cs" />
+    <Compile Include="Source\PbfBuffers\HeaderBBox.cs" />
+    <Compile Include="Source\PbfBuffers\OsmHeader.cs" />
+    <Compile Include="Source\PbfBuffers\PbfChangeset.cs" />
+    <Compile Include="Source\PbfBuffers\PbfDenseMetadata.cs" />
+    <Compile Include="Source\PbfBuffers\PbfDenseNodes.cs" />
+    <Compile Include="Source\PbfBuffers\PbfMetadata.cs" />
+    <Compile Include="Source\PbfBuffers\PbfNode.cs" />
+    <Compile Include="Source\PbfBuffers\PbfRelation.cs" />
+    <Compile Include="Source\PbfBuffers\PbfRelationMemberType.cs" />
+    <Compile Include="Source\PbfBuffers\PbfWay.cs" />
+    <Compile Include="Source\PbfBuffers\PrimitiveBlock.cs" />
+    <Compile Include="Source\PbfBuffers\PrimitiveGroup.cs" />
+    <Compile Include="Source\PbfBuffers\StringTable.cs" />
+    <Compile Include="Source\PBFReader.cs" />
+    <Compile Include="Target\ServerUploadBase.cs" />
+    <Compile Include="Target\SqlServerBulkUpload.cs" />
+    <Compile Include="Target\SqlServerShape.cs" />
+    <Compile Include="Target\SqlServerUpload.cs" />
+    <Compile Include="Utils\CoordinateStore.cs" />
+    <Compile Include="Utils\Distance.cs" />
+    <EmbeddedResource Include="OSM2MSSQL4ROADS.resx">
+      <DependentUpon>OSM2MSSQL4ROADS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProcessDlg.resx">
+      <DependentUpon>ProcessDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

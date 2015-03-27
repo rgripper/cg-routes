@@ -1,0 +1,14 @@
+﻿<h3 class="collection-calendar-month" data-bind="text: formatMonth(firstDate())"></h3>
+<div class="collection-calendar" data-bind="foreach: weeks">
+    <div class="week">
+        <div data-bind="foreach: $data"><div class="day" data-bind="
+            css: { selected: selected, past: past, 'this-month': thisMonth },
+            text: date.getDate(),
+            click: function() { if(!past) $data.toggle(); },
+            attr: { title: $component.formatDate(date) }">
+            </div></div>
+        <a data-bind="visible: $data.some(function(x) { return x.today; }), attr: { href: '/api/Admin/DownloadSchedules?weekdate=' + $data[0].date.toISOString()}" class="btn btn-primary"
+           href="/api/Admin/DownloadSchedules" download><span class="glyphicon glyphicon-download"></span> Графики пользователей</a>
+    </div>
+</div>
+<h3 class="collection-calendar-month" data-bind="text: formatMonth(lastDate())"></h3>

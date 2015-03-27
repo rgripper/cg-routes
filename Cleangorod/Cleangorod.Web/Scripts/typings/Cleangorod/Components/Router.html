@@ -1,0 +1,8 @@
+﻿<div class="container-main" data-bind="visible: true" style="display: none;">
+    <ul data-bind="foreach: nodes"></ul>
+    <button type="button" class="btn btn-default" draggable="true" data-bind="dragData: 'to'">to</button>
+    <button type="button" class="btn btn-danger" data-bind="click: function() { this.selectedNode().next(null); }">clear</button>
+    <div data-bind="css: { loading: isLoading }" class="map-container">
+        <div data-bind="leaflet: mapData.map"></div>
+    </div>
+</div>

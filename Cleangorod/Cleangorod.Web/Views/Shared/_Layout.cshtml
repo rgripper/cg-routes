@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/leaflet.css" rel="stylesheet" />
+    @Styles.Render("~/Content/css")
+    @*<link href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.2/yeti/bootstrap.min.css" rel="stylesheet" />*@
+    @Scripts.Render("~/bundles/modernizr")
+
+    <script type="text/javascript" data-main="@Url.Content("~/Scripts/typings/Cleangorod/init.js")" src="~/scripts/require.js"></script>
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="http://cleangorod.com" class="navbar-brand">Cleangorod</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav" data-bind="if: context().identity.roles.indexOf('Admin') > -1">
+                    <li><a href="#" data-bind="click: function() { router.componentName('cg-collection-schedule'); return false; }">Schedule</a></li>
+                    <li><a href="#" data-bind="click: function() { router.componentName('cg-router'); return false; }">Router</a></li>
+                </ul>
+                <cg-auth data-bind="css: { unauth: context().identity.isAuthorized === false }" params="context: context, router: router"></cg-auth> 
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    </div>
+    @RenderSection("scripts", required: false)
+</body>
+</html>

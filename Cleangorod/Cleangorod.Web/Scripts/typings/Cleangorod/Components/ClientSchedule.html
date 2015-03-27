@@ -1,0 +1,35 @@
+﻿<div style="text-align: center;">
+    <h3 style="margin-bottom: 20px;">
+        Отметьте как можно больше промежутков времени для вывоза!
+    </h3>
+    <form style="min-width: 740px; display: inline-block;">
+        <ul data-bind="foreach: visits" class="form-group clearfix collection-schedule">
+            <li class="col-md-6">
+                <div class="collection-visit">
+                    <div class="collection-visit-date" data-bind="text: formatDate(date)"></div>
+                    <ul data-bind="foreach: timeRanges">
+                        <li class="collection-visit-time" data-bind="css: { active: selected }, click: function() { selected(!selected()); }">
+                            <span data-bind="text: formatHour(startHour)"></span>
+                            <span>-</span>
+                            <span data-bind="text: formatHour(endHour)"></span>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+        <div class="form-group clearfix">
+            <div class="col-md-12">
+                <label class="control-label" style="margin-top: 10px;">Ваш комментарий:</label>
+                <textarea class="form-control" data-bind="value: note" style="max-width: none;"></textarea>
+            </div>
+        </div>
+        <div data-bind="css: { isExecuting: actions.save.isExecuting }">
+            <button class="btn btn-success btn-lg" data-bind="click: actions.save, disable: actions.save.isExecuting">
+                Отправить
+            </button>
+        </div>
+        <div data-bind="css: { 'has-error': saveMessage().isError && !saveMessage.fading(), 'has-success': saveMessage().isSuccess  && !saveMessage.fading()}">
+            <span class="help-block appearing" style="display: inline-block; margin: 5px;" data-bind="text: saveMessage().value"></span>
+        </div>
+    </form>
+</div>

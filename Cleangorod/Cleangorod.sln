@@ -1,0 +1,44 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cleangorod.Data", "Cleangorod.Data\Cleangorod.Data.csproj", "{9E6629D1-BBDA-403A-808E-AF8A8E2DEAED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cleangorod.Web", "Cleangorod.Web\Cleangorod.Web.csproj", "{0F663BB4-C2EA-42F0-8BC0-933BEC62B917}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OSM2MSSQL4ROADS", "OSM2MSSQL4ROADS\OSM2MSSQL4ROADS.csproj", "{2438D250-76D4-466A-B101-42C7BEF6A36F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9E6629D1-BBDA-403A-808E-AF8A8E2DEAED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E6629D1-BBDA-403A-808E-AF8A8E2DEAED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E6629D1-BBDA-403A-808E-AF8A8E2DEAED}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{9E6629D1-BBDA-403A-808E-AF8A8E2DEAED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E6629D1-BBDA-403A-808E-AF8A8E2DEAED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E6629D1-BBDA-403A-808E-AF8A8E2DEAED}.Release|x86.ActiveCfg = Release|Any CPU
+		{0F663BB4-C2EA-42F0-8BC0-933BEC62B917}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F663BB4-C2EA-42F0-8BC0-933BEC62B917}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F663BB4-C2EA-42F0-8BC0-933BEC62B917}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{0F663BB4-C2EA-42F0-8BC0-933BEC62B917}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F663BB4-C2EA-42F0-8BC0-933BEC62B917}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F663BB4-C2EA-42F0-8BC0-933BEC62B917}.Release|x86.ActiveCfg = Release|Any CPU
+		{2438D250-76D4-466A-B101-42C7BEF6A36F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2438D250-76D4-466A-B101-42C7BEF6A36F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2438D250-76D4-466A-B101-42C7BEF6A36F}.Debug|x86.ActiveCfg = Debug|x86
+		{2438D250-76D4-466A-B101-42C7BEF6A36F}.Debug|x86.Build.0 = Debug|x86
+		{2438D250-76D4-466A-B101-42C7BEF6A36F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2438D250-76D4-466A-B101-42C7BEF6A36F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2438D250-76D4-466A-B101-42C7BEF6A36F}.Release|x86.ActiveCfg = Release|x86
+		{2438D250-76D4-466A-B101-42C7BEF6A36F}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
